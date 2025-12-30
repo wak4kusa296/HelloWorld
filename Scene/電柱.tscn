@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://dlykufyfgqhx0"]
+
+[ext_resource type="Texture2D" uid="uid://uwv81t87ic61" path="res://Image/電柱.png" id="1_cv2r7"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_cv2r7"]
+radius = 42.579338
+
+[node name="電柱" type="StaticBody2D"]
+y_sort_enabled = true
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(7, -716)
+texture = ExtResource("1_cv2r7")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_cv2r7")

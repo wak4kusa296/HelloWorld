@@ -1,13 +1,14 @@
-[gd_scene load_steps=39 format=3 uid="uid://c4axtfpiyrkik"]
+[gd_scene load_steps=40 format=3 uid="uid://c4axtfpiyrkik"]
 
 [ext_resource type="PackedScene" uid="uid://baa7tibxidof4" path="res://Scene/character.tscn" id="1_2fmf7"]
 [ext_resource type="Texture2D" uid="uid://c4dbo3orek82g" path="res://Image/Character/キャラチップ-警察-待機.png" id="2_3s04t"]
 [ext_resource type="Texture2D" uid="uid://c306auklbha51" path="res://Image/Character/キャラチップ-警察-移動.png" id="3_1vnx8"]
+[ext_resource type="PackedScene" uid="uid://dlykufyfgqhx0" path="res://Scene/電柱.tscn" id="4_8som6"]
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_3s04t"]
-vertices = PackedVector2Array(470.64844, 245, 1178.2031, -755.2578, 1222.7734, 774.72656, 451.53125, 316.3203, 451.53125, 173.67969, 399.3203, 121.46875, -923.2031, -705.71094, 328, 102.35156, 256.6797, 121.46875, -947.7422, 767.2578, 204.46875, 173.67969, 185.35156, 245, 204.46875, 316.3203, 399.3203, 368.53125, 328, 387.64844, 256.6797, 368.53125)
-polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3), PackedInt32Array(1, 0, 4), PackedInt32Array(1, 4, 5), PackedInt32Array(6, 1, 5, 7), PackedInt32Array(6, 7, 8), PackedInt32Array(9, 6, 8, 10), PackedInt32Array(9, 10, 11), PackedInt32Array(9, 11, 12), PackedInt32Array(13, 3, 2), PackedInt32Array(13, 2, 9, 14), PackedInt32Array(15, 14, 9), PackedInt32Array(9, 12, 15)])
-outlines = Array[PackedVector2Array]([PackedVector2Array(-997, -779, -1024, 842, 1300, 850, 1251, -832)])
+vertices = PackedVector2Array(1085.8984, 316.96875, 1034.1016, 330.8672, 470.64844, 245, 451.53125, 173.67969, 985.8672, 379.10156, 1084.1016, -1083, 399.3203, 121.46875, -375.20313, -107, -392.8672, -172.89844, -1081.8125, -1083, -441.10156, -221.13281, -507, -238.79688, -572.89844, -221.13281, 968.2031, 445, 451.53125, 316.3203, 1086.2266, 573.1094, 1086.8984, 1086.8984, -1076.1875, 1084.0938, 1034.1016, 559.1328, 985.8672, 510.89844, 399.3203, 368.53125, 328, 387.64844, -621.1328, -172.89844, -638.7969, -107, -621.1328, -41.101563, -572.89844, 7.1328125, 256.6797, 368.53125, -507, 24.796875, 204.46875, 316.3203, -441.10156, 7.1328125, 185.35156, 245, -392.8672, -41.101563, 204.46875, 173.67969, 256.6797, 121.46875, 328, 102.35156)
+polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3), PackedInt32Array(2, 1, 4), PackedInt32Array(5, 0, 6, 7, 8), PackedInt32Array(9, 5, 8, 10), PackedInt32Array(9, 10, 11), PackedInt32Array(9, 11, 12), PackedInt32Array(2, 4, 13, 14), PackedInt32Array(15, 16, 17, 18), PackedInt32Array(19, 18, 17), PackedInt32Array(20, 13, 19, 17, 21), PackedInt32Array(9, 12, 22), PackedInt32Array(17, 9, 22, 23), PackedInt32Array(17, 23, 24), PackedInt32Array(17, 24, 25), PackedInt32Array(26, 17, 25, 27, 28), PackedInt32Array(20, 14, 13), PackedInt32Array(26, 21, 17), PackedInt32Array(28, 27, 29, 30), PackedInt32Array(30, 29, 31, 32), PackedInt32Array(32, 31, 7, 33), PackedInt32Array(34, 33, 7), PackedInt32Array(0, 3, 6), PackedInt32Array(34, 7, 6)])
+outlines = Array[PackedVector2Array]([PackedVector2Array(-1157, -1158, 1159, -1158, 1162, 1162, -1151, 1159)])
 parsed_geometry_type = 1
 agent_radius = 75.0
 
@@ -282,7 +283,6 @@ animations = [{
 radius = 65.0
 
 [node name="FirstScene" type="Node2D"]
-y_sort_enabled = true
 
 [node name="Character" parent="." instance=ExtResource("1_2fmf7")]
 position = Vector2(3, 0)
@@ -303,3 +303,9 @@ speed_scale = 1.5
 [node name="CollisionShape2D" type="CollisionShape2D" parent="NavigationRegion2D/StaticBody2D"]
 position = Vector2(0, 188)
 shape = SubResource("CircleShape2D_cml7x")
+
+[node name="電柱2" parent="NavigationRegion2D" instance=ExtResource("4_8som6")]
+position = Vector2(-507, -107)
+
+[node name="電柱" parent="NavigationRegion2D" instance=ExtResource("4_8som6")]
+position = Vector2(1100, 445)
